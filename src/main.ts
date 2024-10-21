@@ -5,17 +5,15 @@ import { ValidationPipe } from '@nestjs/common';
 async function bootstrap() {
   const app = await NestFactory.create(AppModule);
 
-  // Automatically validate DTOs
+  // Enable validation globally
   app.useGlobalPipes(new ValidationPipe());
 
-  // Enable CORS for your frontend
+  // Enable CORS globally
   app.enableCors({
     origin: 'https://saeki-lilac.vercel.app',  // Your frontend origin
-    credentials: true, // Allows credentials like cookies, headers
-    methods: 'GET,HEAD,PUT,PATCH,POST,DELETE,OPTIONS',  // Specify allowed methods
-    allowedHeaders: 'Content-Type, Authorization',  // Allow necessary headers
-    preflightContinue: false,
-    optionsSuccessStatus: 204  // Send 204 response for successful preflight requests
+    credentials: true,  // Allow credentials (cookies, etc.)
+    methods: 'GET,HEAD,PUT,PATCH,POST,DELETE,OPTIONS',  // Allow necessary HTTP methods
+    allowedHeaders: 'Content-Type, Authorization',  // Specify allowed headers
   });
 
   await app.listen(5000);  // Start the server on port 5000
