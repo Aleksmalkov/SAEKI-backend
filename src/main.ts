@@ -11,8 +11,8 @@ async function bootstrap() {
     credentials: true,
     methods: 'GET,HEAD,PUT,PATCH,POST,DELETE,OPTIONS',
     allowedHeaders: 'Content-Type, Authorization',
-    preflightContinue: false,
-    optionsSuccessStatus: 204
+    // preflightContinue: false,
+    // optionsSuccessStatus: 204
   });
   await app.listen(5000);
 }
