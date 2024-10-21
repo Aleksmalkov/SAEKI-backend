@@ -9,7 +9,12 @@
     "routes": [
       {
         "src": "/(.*)",
-        "dest": "/vercel.ts"
+        "dest": "/vercel.ts",
+        "headers": {
+            "Access-Control-Allow-Origin": "https://saeki-lilac.vercel.app",
+            "Access-Control-Allow-Methods": "GET,HEAD,PUT,PATCH,POST,DELETE,OPTIONS",
+            "Access-Control-Allow-Headers": "Content-Type, Authorization"
+        }
       }
     ]
   }
