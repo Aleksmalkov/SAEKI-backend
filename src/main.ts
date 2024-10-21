@@ -9,6 +9,10 @@ async function bootstrap() {
   app.enableCors({
     origin: 'https://saeki-lilac.vercel.app',
     credentials: true,
+    methods: 'GET,HEAD,PUT,PATCH,POST,DELETE,OPTIONS',
+    allowedHeaders: 'Content-Type, Authorization',
+    preflightContinue: false,
+    optionsSuccessStatus: 204
   });
   await app.listen(5000);
 }
