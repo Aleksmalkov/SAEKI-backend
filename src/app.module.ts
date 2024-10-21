@@ -21,12 +21,6 @@ import { QuestionModule } from '../modules/question/question.module';
       path: "/graphql",
       context: ({ req }) => ({ req }),
     }),
-    GraphQLModule.forRoot({
-      cors: {
-        origin: 'https://saeki-lilac.vercel.app',
-        credentials: true,
-      },
-    }),
     AuthModule,
     FileModule,
     OrderModule,

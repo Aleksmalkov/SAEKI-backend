@@ -9,12 +9,12 @@ async function bootstrap() {
   app.useGlobalPipes(new ValidationPipe());
 
   // Enable CORS globally
-  app.enableCors({
-    origin: 'https://saeki-lilac.vercel.app',  // Your frontend origin
-    credentials: true,  // Allow credentials (cookies, etc.)
-    methods: 'GET,HEAD,PUT,PATCH,POST,DELETE,OPTIONS',  // Allow necessary HTTP methods
-    allowedHeaders: 'Content-Type, Authorization',  // Specify allowed headers
-  });
+  // app.enableCors({
+  //   origin: 'https://saeki-lilac.vercel.app',  // Your frontend origin
+  //   credentials: true,  // Allow credentials (cookies, etc.)
+  //   methods: 'GET,HEAD,PUT,PATCH,POST,DELETE,OPTIONS',  // Allow necessary HTTP methods
+  //   allowedHeaders: 'Content-Type, Authorization',  // Specify allowed headers
+  // });
 
   await app.listen(5000);  // Start the server on port 5000
 }
