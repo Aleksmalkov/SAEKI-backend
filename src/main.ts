@@ -7,7 +7,7 @@ async function bootstrap() {
   app.useGlobalPipes(new ValidationPipe());
 
   app.enableCors({
-    origin: '*',
+    origin: 'https://saeki-lilac.vercel.app',
     credentials: true,
   });
   await app.listen(5000);
