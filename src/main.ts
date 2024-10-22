@@ -7,11 +7,11 @@ async function bootstrap() {
   // Enable validation globally
   app.useGlobalPipes(new ValidationPipe());
 
-  // Enable CORS globally
   app.enableCors({
-    origin: 'http://localhost:3000',  // Your frontend origin
-    credentials: true,  // Allow credentials (cookies, etc.)
-
+    origin: ['https://saeki-lilac.vercel.app', 'https://saeki-backend-demo.vercel.app', 'http://localhost:3000'],
+    methods: 'GET,HEAD,PUT,PATCH,POST,DELETE,OPTIONS',
+    credentials: true,
+    allowedHeaders: 'Content-Type, Authorization',
   });
 
   // app.use((req, res, next) => {
