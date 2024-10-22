@@ -15,6 +15,15 @@ async function bootstrap() {
     allowedHeaders: ['content-type'],  // Specify allowed headers
   });
 
+  app.use((req, res, next) => {
+    if (req.method === 'OPTIONS') {
+      res.header('Access-Control-Allow-Methods', 'GET,HEAD,PUT,PATCH,POST,DELETE');
+      res.header('Access-Control-Allow-Headers', 'Content-Type, Authorization');
+      return res.status(200).end();  // Respond with a 200 for preflight requests
+    }
+    next();
+  });
+
   await app.listen(5000);  // Start the server on port 5000
 }
 bootstrap();
